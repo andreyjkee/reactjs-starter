@@ -6,7 +6,7 @@ const BUILD_DIR = path.resolve(__dirname, 'dist')
 const APP_DIR = path.resolve(__dirname, 'src/app');
 
 const config = {
-    entry: APP_DIR + '/index.jsx',
+    entry: APP_DIR + '/index.js',
     output: {
         path: BUILD_DIR,
         filename: 'bundle.js'
@@ -14,10 +14,14 @@ const config = {
     module: {
         loaders: [
             {
-                test: /\.jsx?/,
+                test: /\.js?$/,
                 include: APP_DIR,
                 exclude: /node_modules/,
-                loader: 'babel-loader'
+                loader: 'babel-loader',
+                query: {
+                    plugins: ['transform-runtime'],
+                    presets: ['es2015', 'stage-0', 'react'],
+                }
             }
         ]
     },
@@ -27,6 +31,11 @@ const config = {
             to: BUILD_DIR
         }])
     ],
+    devServer: {
+        historyApiFallback: true,
+        inline: true,
+        port: 9000
+    },
     node: {
       global: true,
       crypto: 'empty',
