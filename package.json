@@ -1,16 +1,22 @@
 {
   "name": "reactjs-starter",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "ReactJS starter",
   "main": "index.js",
   "scripts": {
     "dev": "webpack -d --watch",
     "server:dev": "./node_modules/.bin/webpack-dev-server --inline --hot",
-    "build": "webpack -p --progress --bail",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "webpack -p --progress --bail"
   },
   "author": "Andrey Selemenev",
   "homepage": "https://github.com/andreyjkee/reactjs-starter",
+  "repository": {
+    "type" : "git",
+    "url" : "https://github.com/andreyjkee/reactjs-starter.git"
+  },
+  "bugs": {
+    "url": "https://github.com/andreyjkee/reactjs-starter/issues"
+  },
   "keywords": [
     "react",
     "router",
